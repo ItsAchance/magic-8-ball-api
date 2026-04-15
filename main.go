@@ -9,9 +9,9 @@ import (
 )
 
 type Magic struct {
-	Id     int    `json:"Id"`
-	Answer string `json:"Answer"`
-	Type   string `json:"Type"`
+	Id    int    `json:"id"`
+	Reply string `json:"reply"`
+	Type  string `json:"type"`
 }
 
 var MagicAnswers []Magic
@@ -31,7 +31,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 
 func returnRandomAnswer(w http.ResponseWriter, r *http.Request) {
 	randomIndex := rand.Intn(len(MagicAnswers))
-	fmt.Printf("/magic answered with %d: %s\n", randomIndex, MagicAnswers[randomIndex].Answer)
+	fmt.Printf("/magic answered with %d: %s\n", randomIndex, MagicAnswers[randomIndex].Reply)
 	setJson(&w)
 	enableCors(&w)
 	json.NewEncoder(w).Encode(MagicAnswers[randomIndex])
@@ -73,6 +73,7 @@ func main() {
 		{17, "My sources say no.", "negative"},
 		{18, "Outlook not so good.", "negative"},
 		{19, "Very doubtful. ", "negative"},
+		{20, "Signs point to no.", "negative"},
 	}
 	fmt.Println("Started")
 	handleRequests()
