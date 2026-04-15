@@ -1,9 +1,9 @@
 # Magic 8 ball API
 
-Two endpoints for delivering the standard 20 Magic 8 ball answers as a REST API with JSON:
+Two endpoints for delivering the standard 20 Magic 8 ball answers + 1 custom as a REST API with JSON:
 
  * /magic - give the client one Magic 8 ball answer as a JSON object
- * /completemagic - give the client all 20 standard answer objects in an array
+ * /completemagic - give the client all 21 standard answer objects in an array
 
 Example answer object:
 
